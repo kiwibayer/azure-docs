@@ -34,10 +34,15 @@ The appliance can be deployed as follows:
 - If you don't want to use a template, or you're in Azure Government, you can deploy the appliance for VMware or Hyper-V using a PowerShell script.
 - For physical servers, you always deploy the appliance using a script.
 
-
 ## How does the appliance connect to Azure?
 
-The appliance can connect over the internet or by using Azure ExpressRoute with public/Microsoft peering.
+The appliance can connect over the internet or by using Azure ExpressRoute with Microsoft peering. 
+
+## How does the appliance replicate the data?
+
+The applicance replicates data to an Azure Storage account or a replica Managed Disk on the target Azure region over a public endpoint.
+To replicate data via ExpressRoute, Microsoft peering is required. Note that replication is not supported over private peering. 
+Microsoft peering is the recommended routing domain for replication.
 
 ## Does appliance analysis affect performance?
 
